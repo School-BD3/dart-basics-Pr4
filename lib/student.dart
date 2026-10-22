@@ -1,14 +1,15 @@
-class Student {
-  String name;
-  int age;
+import 'person.dart';
+
+class Student extends Person {
   double averageGrade;
 
   Student({
-    required this.name,
-    required this.age,
-    required this.averageGrade,
+  required super.name,
+  required super.age,
+  required this.averageGrade,
   });
 
+  @override
   void displayInfo() {
     print('Ім’я студента: $name');
     print('Вік студента: $age');

@@ -207,7 +207,7 @@ void main() {
   print('\nРобота з класами та об’єктами:');
 
   Student student = Student(
-    name: 'Данило',
+    name: 'Данііл',
     age: 19,
     averageGrade: 85.5,
   );

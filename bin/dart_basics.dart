@@ -1,6 +1,7 @@
 import 'package:dart_basics/student.dart';
 import 'package:dart_basics/person.dart';
 import 'package:dart_basics/student_manager.dart';
+import 'package:dart_basics/file_service.dart';
 
 void printGreeting(String name) {
   print('Привіт, $name!');
@@ -14,7 +15,7 @@ double calculateAverage(double firstNumber, double secondNumber) {
   return (firstNumber + secondNumber) / 2;
 }
 
-void main() {
+Future<void> main() async {
   int firstNumber = 10;
   int secondNumber = 3;
 
@@ -298,6 +299,31 @@ void main() {
   ];
 
   analyzeGrades(grades);
+
+
+  print('\nАсинхронна операція:');
+
+  print('Початок завантаження даних...');
+
+  await Future.delayed(Duration(seconds: 2));
+
+  print('Дані успішно завантажено.');
+
+  print('\nРобота з файлами:');
+
+  FileService fileService = FileService();
+
+  String filePath = 'student_data.txt';
+  String fileContent = 'Ім’я: Олександр\nСередній бал: 93.0';
+
+  await fileService.writeData(filePath, fileContent);
+
+  String? loadedData = await fileService.readData(filePath);
+
+  if (loadedData != null) {
+    print('Вміст файлу:');
+    print(loadedData);
+  }
 }
 
 void analyzeGrades(List<double> grades) {

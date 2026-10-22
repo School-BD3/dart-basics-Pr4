@@ -1,4 +1,4 @@
-class Person {
+abstract class Person {
   String name;
   int age;
 
@@ -7,8 +7,5 @@ class Person {
     required this.age,
   });
 
-  void displayInfo() {
-    print('Ім’я: $name');
-    print('Вік: $age');
-  }
+  void displayInfo();
 }

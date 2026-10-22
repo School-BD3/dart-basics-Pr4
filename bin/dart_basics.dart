@@ -1,4 +1,5 @@
 import 'package:dart_basics/student.dart';
+import 'package:dart_basics/person.dart';
 
 void printGreeting(String name) {
   print('Привіт, $name!');
@@ -227,4 +228,24 @@ void main() {
   print('Середній бал після некоректного значення: ${student.averageGrade}');
 
   print('Повнолітній: ${student.isAdult()}');
+
+    print('\nДемонстрація поліморфізму:');
+
+  List<Person> people = [
+    Student(
+      name: 'Олександр',
+      age: 20,
+      averageGrade: 90.0,
+    ),
+    Student(
+      name: 'Марія',
+      age: 19,
+      averageGrade: 95.5,
+    ),
+  ];
+
+  for (Person person in people) {
+    person.displayInfo();
+    print('--------------------');
+  }
 }

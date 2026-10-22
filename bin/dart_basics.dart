@@ -112,4 +112,29 @@ void main() {
     default:
       print('Інший день тижня.');
   }
+
+
+    print('\nЦикл for:');
+
+  for (int i = 1; i <= 5; i++) {
+    print('Ітерація $i');
+  }
+
+  print('\nЦикл while:');
+
+  int counter = 1;
+
+  while (counter <= 5) {
+    print('Лічильник: $counter');
+    counter++;
+  }
+
+  print('\nЦикл do-while:');
+
+  int number = 1;
+
+  do {
+    print('Число: $number');
+    number++;
+  } while (number <= 5);
 }

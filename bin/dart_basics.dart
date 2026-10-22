@@ -284,4 +284,59 @@ void main() {
 
   print('\nСписок після видалення:');
   manager.displayStudents();
+
+  print('\nАналіз колекції оцінок:');
+
+  List<double> grades = [
+    75.0,
+    90.0,
+    58.0,
+    82.5,
+    95.0,
+    61.0,
+    45.0,
+  ];
+
+  analyzeGrades(grades);
+}
+
+void analyzeGrades(List<double> grades) {
+  if (grades.isEmpty) {
+    print('Список оцінок порожній.');
+    return;
+  }
+
+  Stopwatch stopwatch = Stopwatch()..start();
+
+  double sum = 0;
+  double minGrade = grades.first;
+  double maxGrade = grades.first;
+  List<double> passingGrades = [];
+
+  for (double grade in grades) {
+    sum += grade;
+
+    if (grade < minGrade) {
+      minGrade = grade;
+    }
+
+    if (grade > maxGrade) {
+      maxGrade = grade;
+    }
+
+    if (grade >= 60) {
+      passingGrades.add(grade);
+    }
+  }
+
+  double average = sum / grades.length;
+
+  stopwatch.stop();
+
+  print('Кількість оцінок: ${grades.length}');
+  print('Середній бал: ${average.toStringAsFixed(2)}');
+  print('Мінімальна оцінка: $minGrade');
+  print('Максимальна оцінка: $maxGrade');
+  print('Успішні оцінки: $passingGrades');
+  print('Час обробки: ${stopwatch.elapsedMicroseconds} мкс');
 }

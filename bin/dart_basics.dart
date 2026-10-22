@@ -1,5 +1,6 @@
 import 'package:dart_basics/student.dart';
 import 'package:dart_basics/person.dart';
+import 'package:dart_basics/student_manager.dart';
 
 void printGreeting(String name) {
   print('Привіт, $name!');
@@ -248,4 +249,39 @@ void main() {
     person.displayInfo();
     print('--------------------');
   }
+
+  print('\nДемонстрація CRUD-операцій:');
+
+  StudentManager manager = StudentManager();
+
+  manager.addStudent(
+    Student(
+      name: 'Олександр',
+      age: 20,
+      averageGrade: 90.0,
+    ),
+  );
+
+  manager.addStudent(
+    Student(
+      name: 'Марія',
+      age: 19,
+      averageGrade: 95.5,
+    ),
+  );
+
+  print('\nСписок студентів:');
+  manager.displayStudents();
+
+  print('\nОновлення даних:');
+  manager.updateStudentGrade('Олександр', 93.0);
+
+  print('\nСписок після оновлення:');
+  manager.displayStudents();
+
+  print('\nВидалення студента:');
+  manager.removeStudent('Марія');
+
+  print('\nСписок після видалення:');
+  manager.displayStudents();
 }

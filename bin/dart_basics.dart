@@ -55,4 +55,61 @@ void main() {
   print('Після trim(): "${message.trim()}"');
   print('Заміна тексту: ${message.replaceAll('Dart', 'Flutter')}');
 
+  int age = 19;
+  double averageGrade = 85.5;
+  bool isStudent = true;
+
+  print('\nЛогічні значення та умови:');
+  print('Вік: $age');
+  print('Середній бал: $averageGrade');
+  print('Студент: $isStudent');
+
+  print('\nОперації порівняння:');
+  print('Вік >= 18: ${age >= 18}');
+  print('Вік < 18: ${age < 18}');
+  print('Бал >= 60: ${averageGrade >= 60}');
+  print('Бал == 100: ${averageGrade == 100}');
+
+  print('\nЛогічні операції:');
+  bool isAdult = age >= 18;
+  bool hasPermission = false;
+  
+  bool studentAndAdult = isStudent && isAdult;
+  bool studentOrAdult = hasPermission || isAdult;
+  bool isNotStudent = !isStudent;
+
+  print('Студент і повнолітній: $studentAndAdult');
+  print('Має дозвіл або є повнолітнім: $studentOrAdult');
+  print('Не студент: $isNotStudent');
+
+  print('\nПеревірка умов:');
+
+  if (age >= 18) {
+    print('Особа повнолітня.');
+  } else {
+    print('Особа неповнолітня.');
+  }
+
+  if (averageGrade >= 90) {
+    print('Рівень успішності: відмінний.');
+  } else if (averageGrade >= 75) {
+    print('Рівень успішності: добрий.');
+  } else if (averageGrade >= 60) {
+    print('Рівень успішності: задовільний.');
+  } else {
+    print('Рівень успішності: незадовільний.');
+  }
+
+  String day = 'Monday';
+
+  switch (day) {
+    case 'Monday':
+      print('День тижня: понеділок.');
+    case 'Tuesday':
+      print('День тижня: вівторок.');
+    case 'Wednesday':
+      print('День тижня: середа.');
+    default:
+      print('Інший день тижня.');
+  }
 }

@@ -1,3 +1,15 @@
+void printGreeting(String name) {
+  print('Привіт, $name!');
+}
+
+int calculateSum(int firstNumber, int secondNumber) {
+  return firstNumber + secondNumber;
+}
+
+double calculateAverage(double firstNumber, double secondNumber) {
+  return (firstNumber + secondNumber) / 2;
+}
+
 void main() {
   int firstNumber = 10;
   int secondNumber = 3;
@@ -140,7 +152,7 @@ void main() {
 
   print('\nРобота зі списком List:');
 
-  List<String> students = ['Анна', 'Данило', 'Олександр'];
+  List<String> students = ['Анна', 'Данііл', 'Олександр'];
 
   print('Усі студенти: $students');
   print('Перший студент: ${students[0]}');
@@ -167,16 +179,26 @@ void main() {
 
   Map<String, int> studentGrades = {
     'Анна': 90,
-    'Данило': 85,
+    'Данііл': 85,
     'Олександр': 78,
   };
 
   print('Оцінки студентів: $studentGrades');
-  print('Оцінка Данила: ${studentGrades['Данило']}');
+  print('Оцінка Данила: ${studentGrades['Данііл']}');
 
   studentGrades['Марія'] = 95;
   print('Після додавання студента: $studentGrades');
 
   studentGrades.remove('Олександр');
   print('Після видалення студента: $studentGrades');
+
+  print('\nРобота з функціями:');
+
+  printGreeting('Данііл');
+
+  int sum = calculateSum(10, 5);
+  print('Сума чисел: $sum');
+
+  double average = calculateAverage(10, 20);
+  print('Середнє арифметичне: $average');
 }

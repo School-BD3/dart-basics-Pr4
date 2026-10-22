@@ -214,5 +214,17 @@ void main() {
 
   student.displayInfo();
 
+  print('\nПеревірка інкапсуляції:');
+
+  print('Поточний середній бал: ${student.averageGrade}');
+
+  student.updateAverageGrade(92.0);
+
+  print('Новий середній бал: ${student.averageGrade}');
+
+  student.updateAverageGrade(150.0);
+
+  print('Середній бал після некоректного значення: ${student.averageGrade}');
+
   print('Повнолітній: ${student.isAdult()}');
 }

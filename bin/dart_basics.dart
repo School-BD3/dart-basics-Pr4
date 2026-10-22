@@ -137,4 +137,46 @@ void main() {
     print('Число: $number');
     number++;
   } while (number <= 5);
+
+  print('\nРобота зі списком List:');
+
+  List<String> students = ['Анна', 'Данило', 'Олександр'];
+
+  print('Усі студенти: $students');
+  print('Перший студент: ${students[0]}');
+
+  students.add('Марія');
+  print('Після додавання: $students');
+
+  students.remove('Анна');
+  print('Після видалення: $students');
+
+  print('\nРобота з множиною Set:');
+
+  Set<int> numbers = {1, 2, 3, 4, 5};
+
+  print('Унікальні числа: $numbers');
+
+  numbers.add(6);
+  print('Після додавання: $numbers');
+
+  numbers.remove(2);
+  print('Після видалення: $numbers');
+
+  print('\nРобота з Map:');
+
+  Map<String, int> studentGrades = {
+    'Анна': 90,
+    'Данило': 85,
+    'Олександр': 78,
+  };
+
+  print('Оцінки студентів: $studentGrades');
+  print('Оцінка Данила: ${studentGrades['Данило']}');
+
+  studentGrades['Марія'] = 95;
+  print('Після додавання студента: $studentGrades');
+
+  studentGrades.remove('Олександр');
+  print('Після видалення студента: $studentGrades');
 }

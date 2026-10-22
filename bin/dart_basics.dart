@@ -1,3 +1,5 @@
+import 'package:dart_basics/student.dart';
+
 void printGreeting(String name) {
   print('Привіт, $name!');
 }
@@ -201,4 +203,16 @@ void main() {
 
   double average = calculateAverage(10, 20);
   print('Середнє арифметичне: $average');
+
+  print('\nРобота з класами та об’єктами:');
+
+  Student student = Student(
+    name: 'Данило',
+    age: 19,
+    averageGrade: 85.5,
+  );
+
+  student.displayInfo();
+
+  print('Повнолітній: ${student.isAdult()}');
 }
